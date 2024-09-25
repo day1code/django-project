@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} All Blogs Post {% endblock %}
+
+{% block content %}
+<div class="container row gap-3 mt-5 mb-5"> 
+    <h1 class="title text-center">Our Blogs</h1>
+    {% for blog in blogs %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{blog.photo.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{blog.user.username}}</h5>
+          <p class="card-text">{{blog.text}}</p>
+          <p class="card-text">{{blog.updated_at}}</p>
+          <a href="#" class="btn btn-primary">Edit Blog</a>
+          <a href="#" class="btn btn-danger">Delete Blog</a>
+        </div>
+      </div>
+      {% endfor %}
+</div>
+{% endblock %}
